@@ -1,12 +1,11 @@
-package TMDB;
+package tmdb;
 
-import Utility.Parent;
-import org.testng.annotations.Test;
+import utility.Parent;
+import org.testng.annotations.*;
+import static io.restassured.RestAssured.*;
 
-import static io.restassured.RestAssured.given;
-
-public class Search extends Parent {
-    @Test
+public class _04_Search extends Parent {
+    @Test(priority = 1)
     public void getMovie() {
         given()
                 .spec(reqSpec)
@@ -18,7 +17,7 @@ public class Search extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 2)
     public void getTV() {
         given()
                 .spec(reqSpec)
@@ -30,7 +29,7 @@ public class Search extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 3)
     public void getPerson() {
         given()
                 .spec(reqSpec)
@@ -42,7 +41,7 @@ public class Search extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 4)
     public void geKeyword() {
         given()
                 .spec(reqSpec)

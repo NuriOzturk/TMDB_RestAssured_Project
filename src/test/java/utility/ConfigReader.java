@@ -1,4 +1,4 @@
-package Utility;
+package utility;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,6 +8,7 @@ import java.util.Properties;
 public class ConfigReader {
     private static final String configFilePath = "configuration.properties";
     private static Properties properties = new Properties();
+
     static {
         try {
             FileInputStream file = new FileInputStream(configFilePath);
@@ -34,8 +35,12 @@ public class ConfigReader {
     public static void updateProperty(String keyword) {
         switch (keyword) {
             case "movieID":
-                String movieID="";
+                String movieID = "";
                 properties.setProperty(keyword, movieID);
+                break;
+            case "listID":
+                String listID = "";
+                properties.setProperty(keyword, listID);
                 break;
             default:
                 throw new IllegalArgumentException("Unsupported property key: " + keyword);

@@ -1,15 +1,15 @@
-package TMDB;
+package tmdb;
 
-import Utility.ConfigReader;
-import Utility.Parent;
-import org.testng.annotations.Test;
+import utility.ConfigReader;
+import utility.Parent;
+import org.testng.annotations.*;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 
-public class Genres extends Parent {
-    @Test
+public class _02_Genres extends Parent {
+    @Test(priority = 1)
     public void getMovieList() {
-        int movieID=
+        int movieID =
         given()
                 .spec(reqSpec)
                 .when()
@@ -18,14 +18,12 @@ public class Genres extends Parent {
                 .log().body()
                 .statusCode(200)
                 .extract().path("genres[0].id");
-        String movieIDStr= String.valueOf(movieID);
+        String movieIDStr = String.valueOf(movieID);
         ConfigReader.updateProperty("movieID");
-        ConfigReader.saveToConfig("movieID",movieIDStr);
-
-        ;
+        ConfigReader.saveToConfig("movieID", movieIDStr);
     }
 
-    @Test
+    @Test(priority = 2)
     public void getTVList(){
         given()
                 .spec(reqSpec)
@@ -35,5 +33,4 @@ public class Genres extends Parent {
                 .log().body()
                 .statusCode(200);
     }
-
 }
