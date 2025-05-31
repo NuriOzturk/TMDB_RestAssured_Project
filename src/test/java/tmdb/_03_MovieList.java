@@ -1,12 +1,11 @@
-package TMDB;
+package tmdb;
 
-import Utility.Parent;
-import org.testng.annotations.Test;
+import utility.Parent;
+import org.testng.annotations.*;
+import static io.restassured.RestAssured.*;
 
-import static io.restassured.RestAssured.given;
-
-public class MovieList extends Parent {
-    @Test
+public class _03_MovieList extends Parent {
+    @Test(priority = 1)
     public void getNowPlaying() {
         given()
                 .spec(reqSpec)
@@ -17,7 +16,7 @@ public class MovieList extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 2)
     public void getPopular() {
         given()
                 .spec(reqSpec)
@@ -28,8 +27,7 @@ public class MovieList extends Parent {
                 .statusCode(200);
     }
 
-
-    @Test
+    @Test(priority = 3)
     public void getTopRated() {
         given()
                 .spec(reqSpec)
@@ -40,7 +38,7 @@ public class MovieList extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 4)
     public void getUpcoming() {
         given()
                 .spec(reqSpec)

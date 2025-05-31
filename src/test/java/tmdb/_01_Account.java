@@ -1,16 +1,14 @@
-package TMDB;
+package tmdb;
 
-import Utility.Parent;
-import org.testng.annotations.Test;
-
+import utility.Parent;
+import org.testng.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 
-public class Account extends Parent {
-
-    @Test
+public class _01_Account extends Parent {
+    @Test(priority = 1)
     public void getAccountDetails() {
         given()
                 .spec(reqSpec)
@@ -21,8 +19,8 @@ public class Account extends Parent {
                 .statusCode(200);
     }
 
-    @Test
-    public void addToFavourites() {
+    @Test(priority = 2)
+    public void postAddToFavourites() {
         Map<String, String> addToFav = new HashMap<>();
         addToFav.put("media_type", "movie");
         addToFav.put("media_id", "548");
@@ -38,8 +36,8 @@ public class Account extends Parent {
                 .statusCode(201);
     }
 
-    @Test
-    public void addToWatchlist() {
+    @Test(priority = 3)
+    public void postAddToWatchlist() {
         Map<String, String> addToWatchlist = new HashMap<>();
         addToWatchlist.put("media_type", "movie");
         addToWatchlist.put("media_id", "11");
@@ -55,7 +53,7 @@ public class Account extends Parent {
                 .statusCode(201);
     }
 
-    @Test
+    @Test(priority = 4)
     public void getFavouriteMovies() {
         given()
                 .spec(reqSpec)
@@ -66,7 +64,7 @@ public class Account extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 5)
     public void getFavoriteTV() {
         given()
                 .spec(reqSpec)
@@ -77,7 +75,7 @@ public class Account extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 6)
     public void getRatedMovies() {
         given()
                 .spec(reqSpec)
@@ -88,7 +86,7 @@ public class Account extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 7)
     public void getReatedTV() {
         given()
                 .spec(reqSpec)
@@ -99,7 +97,7 @@ public class Account extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 8)
     public void getWatchlistMovies() {
         given()
                 .spec(reqSpec)
@@ -110,7 +108,7 @@ public class Account extends Parent {
                 .statusCode(200);
     }
 
-    @Test
+    @Test(priority = 9)
     public void getWatchlistTV() {
         given()
                 .spec(reqSpec)
@@ -120,5 +118,4 @@ public class Account extends Parent {
                 .log().body()
                 .statusCode(200);
     }
-
 }
