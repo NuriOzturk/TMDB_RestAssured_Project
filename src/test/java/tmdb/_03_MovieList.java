@@ -1,10 +1,10 @@
 package tmdb;
 
-import utility.Parent;
+import utility.ReusableMethods;
 import org.testng.annotations.*;
 import static io.restassured.RestAssured.*;
 
-public class _03_MovieList extends Parent {
+public class _03_MovieList extends ReusableMethods {
     @Test(priority = 1)
     public void getNowPlaying() {
         given()
