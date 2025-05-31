@@ -7,10 +7,10 @@ import static io.restassured.RestAssured.given;
 
 public class Search extends Parent {
     @Test
-    public void getMovie(){
+    public void getMovie() {
         given()
                 .spec(reqSpec)
-                .queryParam( "query", "Hot Frosty")
+                .queryParam("query", "Hot Frosty")
                 .when()
                 .get("/search/movie")
                 .then()
@@ -19,10 +19,10 @@ public class Search extends Parent {
     }
 
     @Test
-    public void getTV(){
+    public void getTV() {
         given()
                 .spec(reqSpec)
-                .queryParam( "query", "Watch What Happens Live with Andy Cohen")
+                .queryParam("query", "Watch What Happens Live with Andy Cohen")
                 .when()
                 .get("/search/tv")
                 .then()
@@ -31,10 +31,10 @@ public class Search extends Parent {
     }
 
     @Test
-    public  void getPerson(){
+    public void getPerson() {
         given()
                 .spec(reqSpec)
-                .queryParam( "query", "Jason Statham")
+                .queryParam("query", "Jason Statham")
                 .when()
                 .get("/search/person")
                 .then()
@@ -43,19 +43,14 @@ public class Search extends Parent {
     }
 
     @Test
-    public void getkeyword(){
+    public void geKeyword() {
         given()
                 .spec(reqSpec)
-                .queryParam( "query", "TV")
+                .queryParam("query", "TV")
                 .when()
                 .get("/search/keyword")
                 .then()
                 .log().body()
                 .statusCode(200);
     }
-
-
-
-
-
 }
