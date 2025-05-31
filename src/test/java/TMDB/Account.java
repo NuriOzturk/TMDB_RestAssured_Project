@@ -15,15 +15,15 @@ public class Account extends Parent {
         given()
                 .spec(reqSpec)
                 .when()
-                .get("/account/"+accountID)
+                .get("/account/" + accountID)
                 .then()
                 .log().body()
                 .statusCode(200);
     }
 
     @Test
-    public void addToFavourites(){
-        Map <String,String> addToFav = new HashMap<>();
+    public void addToFavourites() {
+        Map<String, String> addToFav = new HashMap<>();
         addToFav.put("media_type", "movie");
         addToFav.put("media_id", "548");
         addToFav.put("favorite", "true");
@@ -32,15 +32,15 @@ public class Account extends Parent {
                 .spec(reqSpec)
                 .body(addToFav)
                 .when()
-                .post("/account/"+accountID+"/favorite")
+                .post("/account/" + accountID + "/favorite")
                 .then()
                 .log().body()
                 .statusCode(201);
     }
 
     @Test
-    public void addToWatchlist(){
-        Map <String,String> addToWatchlist = new HashMap<>();
+    public void addToWatchlist() {
+        Map<String, String> addToWatchlist = new HashMap<>();
         addToWatchlist.put("media_type", "movie");
         addToWatchlist.put("media_id", "11");
         addToWatchlist.put("watchlist", "true");
@@ -49,7 +49,7 @@ public class Account extends Parent {
                 .spec(reqSpec)
                 .body(addToWatchlist)
                 .when()
-                .post("/account/"+accountID+"/watchlist")
+                .post("/account/" + accountID + "/watchlist")
                 .then()
                 .log().body()
                 .statusCode(201);
@@ -60,49 +60,65 @@ public class Account extends Parent {
         given()
                 .spec(reqSpec)
                 .when()
-                .get("/account/"+accountID+"/favorite/movies")
+                .get("/account/" + accountID + "/favorite/movies")
                 .then()
                 .log().body()
                 .statusCode(200);
     }
+
     @Test
-    public void getFavoriteTV(){
+    public void getFavoriteTV() {
         given()
                 .spec(reqSpec)
                 .when()
-                .get("/account/"+accountID+"/favorite/tv")
+                .get("/account/" + accountID + "/favorite/tv")
                 .then()
                 .log().body()
                 .statusCode(200);
     }
+
     @Test
-    public void getRatedMovies(){
+    public void getRatedMovies() {
         given()
                 .spec(reqSpec)
                 .when()
-                .get("/account/"+accountID+"/rated/movies")
+                .get("/account/" + accountID + "/rated/movies")
                 .then()
                 .log().body()
                 .statusCode(200);
     }
+
     @Test
-    public void getReatedTV(){
+    public void getReatedTV() {
         given()
                 .spec(reqSpec)
                 .when()
-                .get("/account/"+accountID+"/rated/tv")
+                .get("/account/" + accountID + "/rated/tv")
                 .then()
                 .log().body()
                 .statusCode(200);
     }
+
     @Test
-    public void getWatchlistMovies(){
+    public void getWatchlistMovies() {
         given()
                 .spec(reqSpec)
                 .when()
-                .get("/account/"+accountID+"/watchlist/movies")
+                .get("/account/" + accountID + "/watchlist/movies")
                 .then()
                 .log().body()
                 .statusCode(200);
     }
+
+    @Test
+    public void getWatchlistTV() {
+        given()
+                .spec(reqSpec)
+                .when()
+                .get("/account/" + accountID + "/watchlist/tv")
+                .then()
+                .log().body()
+                .statusCode(200);
+    }
+
 }
