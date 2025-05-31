@@ -20,4 +20,8 @@ public class ConfigReader {
     public static String getProperty(String keyword) {
         return properties.getProperty(keyword);
     }
+
+    public static int getIntProperty(String key) {
+        return Integer.parseInt(properties.getProperty(key));
+    }
 }
