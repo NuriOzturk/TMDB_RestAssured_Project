@@ -1,7 +1,7 @@
 package TMDB;
 
-import utility.ConfigReader;
-import utility.Parent;
+import Utility.ConfigReader;
+import Utility.Parent;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
