@@ -1,6 +1,6 @@
-package TMDB;
+package tmdb;
 
-import Utility.Parent;
+import utility.Parent;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
