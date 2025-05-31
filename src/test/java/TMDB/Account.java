@@ -65,4 +65,44 @@ public class Account extends Parent {
                 .log().body()
                 .statusCode(200);
     }
+    @Test
+    public void getFavoriteTV(){
+        given()
+                .spec(reqSpec)
+                .when()
+                .get("/account/"+accountID+"/favorite/tv")
+                .then()
+                .log().body()
+                .statusCode(200);
+    }
+    @Test
+    public void getRatedMovies(){
+        given()
+                .spec(reqSpec)
+                .when()
+                .get("/account/"+accountID+"/rated/movies")
+                .then()
+                .log().body()
+                .statusCode(200);
+    }
+    @Test
+    public void getReatedTV(){
+        given()
+                .spec(reqSpec)
+                .when()
+                .get("/account/"+accountID+"/rated/tv")
+                .then()
+                .log().body()
+                .statusCode(200);
+    }
+    @Test
+    public void getWatchlistMovies(){
+        given()
+                .spec(reqSpec)
+                .when()
+                .get("/account/"+accountID+"/watchlist/movies")
+                .then()
+                .log().body()
+                .statusCode(200);
+    }
 }
