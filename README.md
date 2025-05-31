@@ -89,7 +89,7 @@ It automates core functionalities such as user account operations, movie listing
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/NuriOzturk/TMDB_RestAssured_Project.git
+   git clone https://github.com/zaferatakli/TMDB-RestAssured-API-Test-Automation-Project.git
    ```
 2. Add your token and base URL to `configuration.properties`:
 
