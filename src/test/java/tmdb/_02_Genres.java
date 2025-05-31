@@ -1,12 +1,12 @@
 package tmdb;
 
 import utility.ConfigReader;
-import utility.Parent;
+import utility.ReusableMethods;
 import org.testng.annotations.*;
 
 import static io.restassured.RestAssured.*;
 
-public class _02_Genres extends Parent {
+public class _02_Genres extends ReusableMethods {
     @Test(priority = 1)
     public void getMovieList() {
         int movieID =

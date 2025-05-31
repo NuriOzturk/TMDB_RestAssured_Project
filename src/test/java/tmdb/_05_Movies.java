@@ -1,14 +1,14 @@
 package tmdb;
 
 import utility.ConfigReader;
-import utility.Parent;
+import utility.ReusableMethods;
 import org.testng.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 
-public class _05_Movies extends Parent {
+public class _05_Movies extends ReusableMethods {
     @Test(priority = 1)
     public void getDetails() {
         given()

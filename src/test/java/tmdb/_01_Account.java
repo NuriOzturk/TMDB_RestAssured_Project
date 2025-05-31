@@ -1,13 +1,13 @@
 package tmdb;
 
-import utility.Parent;
+import utility.ReusableMethods;
 import org.testng.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 
-public class _01_Account extends Parent {
+public class _01_Account extends ReusableMethods {
     @Test(priority = 1)
     public void getAccountDetails() {
         given()
