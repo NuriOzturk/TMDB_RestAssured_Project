@@ -144,4 +144,3 @@ TMDB_RESTAssured_Project/
 * [Eren Icinozbebek](https://github.com/theeren123)
 
 ---
-
